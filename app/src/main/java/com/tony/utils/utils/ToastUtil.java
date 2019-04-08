@@ -9,7 +9,7 @@ import android.widget.Toast;
  * @author Tony
  * @time 2019/4/4 11:28
  */
-public class ToasUtil {
+public class ToastUtil {
 
     public static void show (CharSequence text, Context context){
         try{
