@@ -14,14 +14,25 @@ import butterknife.Unbinder;
  */
 public abstract class BaseActivity extends AppCompatActivity{
 
-    private Unbinder unbinder;
+    private Unbinder mUnbinder;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
-        unbinder= ButterKnife.bind(this);//绑定ButterKnife
+        mUnbinder= ButterKnife.bind(this);//绑定ButterKnife
+        initView();
+        initData();
+        initListener();
     }
-
     protected abstract int getLayoutId();
+    protected abstract  void initView();
+    protected abstract  void initData();
+    protected abstract  void initListener();
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mUnbinder.unbind();
+    }
 }

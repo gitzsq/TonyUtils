@@ -19,5 +19,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="RxJavaText" />
+        android:text="RxJavaTest" />
+
+    <Button
+        android:id="@+id/pic_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="PicTest" />
+
 </LinearLayout>

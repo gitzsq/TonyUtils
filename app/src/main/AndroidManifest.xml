@@ -3,6 +3,11 @@
     package="com.tony.utils">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
 
     <application
         android:allowBackup="true"
@@ -19,7 +24,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activity.LoginActivity" />
-        <activity android:name=".ui.activity.RxActivity"></activity>
+        <activity android:name=".ui.activity.RxActivity" />
+        <activity android:name=".ui.activity.PicActivity"/>
+        <activity android:name=".utils.pic.picviews.PhotoActivity"/>
+        <activity android:name=".utils.pic.picviews.ImageGridActivity"/>
+        <activity android:name=".utils.pic.picviews.TestPicActivity"/>
+
     </application>
 
 </manifest>

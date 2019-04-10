@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import com.tony.utils.R
 import com.tony.utils.ui.activity.LoginActivity
+import com.tony.utils.ui.activity.PicActivity
 import com.tony.utils.ui.activity.RxActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_main)
         networkrequest_btn.setOnClickListener(this)
         rx_btn.setOnClickListener(this)
+        pic_btn.setOnClickListener(this)
     }
 
     //按钮点击事件
@@ -33,6 +35,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 intent.setClass(this, RxActivity::class.java)
                 startActivity(intent)
             }
+            R.id.pic_btn ->{//仿微信多张照片选择
+            val intent = Intent()
+            intent.setClass(this, PicActivity::class.java)
+            startActivity(intent)
+        }
+
         }
     }
 }

@@ -12,7 +12,6 @@ import com.tony.utils.utils.ToastUtil;
 import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import io.reactivex.functions.Consumer;
 import rx.Observable;
 import rx.functions.Action1;
@@ -24,16 +23,18 @@ import rx.functions.Action1;
  * @author Tony
  * @time 2019/4/8 15:19
  */
-public class RxActivity extends AppCompatActivity {
+public class RxActivity extends BaseActivity {
     @BindView(R.id.rx_btn)
     Button rxBtn;
     private Context mContext;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rx);
-        ButterKnife.bind(this);
+    protected int getLayoutId() {
+        return R.layout.activity_rx;
+    }
+
+    @Override
+    protected void initView() {
         mContext = this;
         //防止按钮在单位时间内被重复点击
         RxView.clicks(rxBtn).throttleFirst(1,TimeUnit.SECONDS).subscribe(new Consumer<Object>() {
@@ -42,6 +43,16 @@ public class RxActivity extends AppCompatActivity {
                 startTimerTask();
             }
         });
+    }
+
+    @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    protected void initListener() {
+
     }
 
 //    @OnClick({R.id.rx_btn})

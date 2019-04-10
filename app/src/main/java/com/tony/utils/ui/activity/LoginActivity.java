@@ -32,7 +32,7 @@ import rx.functions.Action1;
  * @author Tony
  * @time 2019/4/3 21:37
  */
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends BaseActivity {
 
 
     @BindView(R.id.login_btn)
@@ -43,13 +43,25 @@ public class LoginActivity extends AppCompatActivity {
     private Context mContext;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        ButterKnife.bind(this);
+    protected int getLayoutId() {
+        return R.layout.activity_login;
+    }
+
+    @Override
+    protected void initView() {
         mContext = this;
         mLoginPresenter.onCreate();
         mLoginPresenter.attachView(mILoginView);
+    }
+
+    @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    protected void initListener() {
+
     }
 
     @OnClick({R.id.login_btn})

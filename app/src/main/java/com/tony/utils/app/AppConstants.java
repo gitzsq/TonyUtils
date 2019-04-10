@@ -12,5 +12,8 @@ public class AppConstants {
     //android 请求token
     public static final String TOKEN = "4CE19CA8FCD150A4";
 
+    //可选图片的最大值
+    public static final int PIC_MAX_NUM =2;
+
 
 }
