@@ -9,23 +9,29 @@
 
     <Button
         android:id="@+id/networkrequest_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="260dp"
+        android:layout_height="60dp"
         android:layout_marginTop="20dp"
-        android:text="RxJava+Retrofit" />
+        android:text="RxJava+Retrofit网络请求" />
 
     <Button
         android:id="@+id/rx_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="260dp"
+        android:layout_height="60dp"
         android:layout_marginTop="20dp"
-        android:text="RxJavaTest" />
+        android:text="RxJava测试" />
 
     <Button
         android:id="@+id/pic_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="260dp"
+        android:layout_height="60dp"
         android:layout_marginTop="20dp"
-        android:text="PicTest" />
+        android:text="仿微信多张照片选择" />
 
+    <Button
+        android:id="@+id/radio_btn"
+        android:layout_width="260dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:text="动态添加radiobutton" />
 </LinearLayout>

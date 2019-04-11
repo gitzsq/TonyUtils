@@ -27,6 +27,7 @@ public class ToastUtil {
             Looper.prepare();
             Toast.makeText(context,text,Toast.LENGTH_SHORT).show();
             Looper.loop();
+
         }
     }
 
