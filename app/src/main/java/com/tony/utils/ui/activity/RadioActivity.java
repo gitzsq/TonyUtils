@@ -1,7 +1,6 @@
 package com.tony.utils.ui.activity;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -11,7 +10,6 @@ import com.tony.utils.R;
 import com.tony.utils.utils.ToastUtil;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * 单选按钮

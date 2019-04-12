@@ -47,4 +47,5 @@ dependencies {
     implementation files('libs/gestureimageview.jar')
     implementation 'com.github.bumptech.glide:glide:3.8.0'
     implementation 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
+    implementation files('libs/libammsdk.jar.jar')
 }

@@ -21,6 +21,7 @@ public class LogUtil {
         if(!DEBUG){
             return;
         }
+        tag="Tony  "+tag;
         switch (level){
             case LECEL_INFO:
                 Log.i(tag,content);
