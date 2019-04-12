@@ -34,4 +34,11 @@
         android:layout_height="60dp"
         android:layout_marginTop="20dp"
         android:text="动态添加radiobutton" />
+
+    <Button
+        android:id="@+id/battary_btn"
+        android:layout_width="260dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:text="电池自定义view" />
 </LinearLayout>

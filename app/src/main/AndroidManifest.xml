@@ -9,12 +9,12 @@
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
+        android:name=".app.TonyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".app.TonyApplication"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.MainActivity">
             <intent-filter>
@@ -29,15 +29,15 @@
         <activity android:name=".utils.pic.picviews.PhotoActivity" />
         <activity android:name=".utils.pic.picviews.ImageGridActivity" />
         <activity android:name=".utils.pic.picviews.TestPicActivity" />
-        <activity android:name=".ui.activity.RadioActivity"></activity>
+        <activity android:name=".ui.activity.RadioActivity" />
         <activity
-            android:name="com.tony.utils.wxapi.WXEntryActivity"
+            android:name=".wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-        </activity>
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"></activity>
+        <activity android:name=".ui.activity.BattaryActivity"></activity>
     </application>
 
 </manifest>

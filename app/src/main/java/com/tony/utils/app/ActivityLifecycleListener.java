@@ -7,7 +7,7 @@ import android.os.Bundle;
 import com.tony.utils.utils.LogUtil;
 
 /**
- * 
+ * ActivityLifecycleCallbacks  activity生命周期回调
  * @author Tony
  * @time 2019/4/12 17:09
  */

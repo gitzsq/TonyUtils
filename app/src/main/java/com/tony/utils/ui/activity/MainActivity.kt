@@ -5,10 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.tony.utils.R
-import com.tony.utils.ui.activity.LoginActivity
-import com.tony.utils.ui.activity.PicActivity
-import com.tony.utils.ui.activity.RadioActivity
-import com.tony.utils.ui.activity.RxActivity
+import com.tony.utils.ui.activity.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -22,6 +19,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         rx_btn.setOnClickListener(this)
         pic_btn.setOnClickListener(this)
         radio_btn.setOnClickListener(this)
+        battary_btn.setOnClickListener(this)
     }
 
     //按钮点击事件
@@ -45,6 +43,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.radio_btn -> {//动态添加radiobutton
                 val intent = Intent()
                 intent.setClass(this, RadioActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.battary_btn -> {//电池自定义view
+                val intent = Intent()
+                intent.setClass(this, BattaryActivity::class.java)
                 startActivity(intent)
             }
         }
