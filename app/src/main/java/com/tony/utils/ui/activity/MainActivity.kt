@@ -1,4 +1,4 @@
-package com.tony.utils.ui
+package com.tony.utils.ui.activity
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
