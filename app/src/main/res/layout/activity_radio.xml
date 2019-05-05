@@ -7,13 +7,14 @@
     android:orientation="vertical"
     tools:context=".ui.activity.RadioActivity">
 
-    <RadioGroup
-        android:id="@+id/radiogroup"
+    <com.tony.utils.customview.CustomRadioGroup
+        android:id="@+id/customRadioGroup"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:orientation="horizontal">
 
 
-    </RadioGroup>
-
+    </com.tony.utils.customview.CustomRadioGroup>
 
 </LinearLayout>
