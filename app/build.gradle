@@ -15,6 +15,14 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk{
+            moduleName "app"
+            abiFilters "armeabi"
+        }
+        sourceSets{
+            main{ jniLibs.srcDirs=['Libs']
+                }
+        }
     }
     packagingOptions {
 //解决More than one file was found with OS independent path 'META-INF/rxjava.properties'
@@ -48,4 +56,5 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:3.8.0'
     implementation 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
     implementation files('libs/libammsdk.jar.jar')
+    implementation files('libs/BaiduLBS_Android.jar')
 }

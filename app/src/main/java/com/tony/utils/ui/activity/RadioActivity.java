@@ -48,7 +48,7 @@ public class RadioActivity extends BaseActivity {
 //            tempButton.setBackgroundResource(R.drawable.xxx);	// 设置RadioButton的背景图片
 //            tempButton.setButtonDrawable(R.drawable.xxx);			// 设置按钮的样式
                 tempButton.setPadding(0, 0, 0, 0); // 设置文字距离按钮四周的距离
-                tempButton.setText("按钮"+1);
+                tempButton.setText("按钮"+i);
 //                tempButton.setTag(typeCode[i]);
                 customRadioGroup1.addView(tempButton, LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
             }

@@ -14,7 +14,7 @@ import com.tony.utils.R;
 /**
  * 透明渐变欢迎页
  * @author Tony
- * @time 2019/5/5 14:16
+ * @time 2019/5/5 15:46
  */
 public class WelcomeActivity extends AppCompatActivity {
 
