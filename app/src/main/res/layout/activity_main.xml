@@ -6,87 +6,99 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
         android:gravity="center"
+        android:text="TonyUtil功能列表"
         android:textColor="#000000"
         android:textSize="24sp"
-        android:textStyle="bold"
-        android:text="TonyUtil功能列表" />
+        android:textStyle="bold" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_horizontal"
             android:orientation="vertical">
-        <Button
-            android:id="@+id/networkrequest_btn"
-            android:layout_width="260dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="20dp"
-            android:text="RxJava+Retrofit网络请求" />
 
-        <Button
-            android:id="@+id/rx_btn"
-            android:layout_width="260dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="20dp"
-            android:text="RxJava测试" />
+            <Button
+                android:id="@+id/networkrequest_btn"
+                android:layout_width="260dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:text="RxJava+Retrofit网络请求" />
 
-        <Button
-            android:id="@+id/pic_btn"
-            android:layout_width="260dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="20dp"
-            android:text="仿微信多张照片选择" />
+            <Button
+                android:id="@+id/rx_btn"
+                android:layout_width="260dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:text="RxJava测试" />
 
-        <Button
-            android:id="@+id/radio_btn"
-            android:layout_width="260dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="20dp"
-            android:text="动态添加radiobutton" />
+            <Button
+                android:id="@+id/pic_btn"
+                android:layout_width="260dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:text="仿微信多张照片选择" />
 
-        <Button
-            android:id="@+id/battary_btn"
-            android:layout_width="260dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="20dp"
-            android:text="电池自定义view" />
+            <Button
+                android:id="@+id/radio_btn"
+                android:layout_width="260dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:text="动态添加radiobutton" />
 
-        <Button
-            android:id="@+id/dialog_btn"
-            android:layout_width="260dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="20dp"
-            android:text="提示框" />
+            <Button
+                android:id="@+id/battary_btn"
+                android:layout_width="260dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:text="电池自定义view" />
 
-        <Button
-            android:id="@+id/okhttp_btn"
-            android:layout_width="260dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="20dp"
-            android:text="okhttp请求" />
+            <Button
+                android:id="@+id/dialog_btn"
+                android:layout_width="260dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:text="提示框" />
 
-        <Button
-            android:id="@+id/map_btn"
-            android:layout_width="260dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="20dp"
-            android:text="百度地图相关" />
-        <Button
-            android:id="@+id/livedatabus_btn"
-            android:layout_width="260dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="20dp"
-            android:text="livedatabus测试" />
+            <Button
+                android:id="@+id/okhttp_btn"
+                android:layout_width="260dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:text="okhttp请求" />
+
+            <Button
+                android:id="@+id/map_btn"
+                android:layout_width="260dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:text="百度地图相关" />
+
+            <Button
+                android:id="@+id/livedatabus_btn"
+                android:layout_width="260dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:text="livedatabus测试" />
+
+            <Button
+                android:id="@+id/spinner_btn"
+                android:layout_width="260dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:text="下拉控件Spinner" />
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

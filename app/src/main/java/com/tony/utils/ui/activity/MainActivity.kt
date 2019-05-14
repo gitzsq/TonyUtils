@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         okhttp_btn.setOnClickListener(this)
         map_btn.setOnClickListener(this)
         livedatabus_btn.setOnClickListener(this)
-
+        spinner_btn.setOnClickListener(this)
     }
 
     //按钮点击事件
@@ -79,6 +79,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 intent.setClass(this,LiveDataBusActivity::class.java)
                 startActivity(intent)
             }
+            R.id.spinner_btn -> {//下拉控件pinner_btns
+                val intent = Intent()
+                intent.setClass(this,SpinnerActivity::class.java)
+                startActivity(intent)
+            }
+
         }
     }
 

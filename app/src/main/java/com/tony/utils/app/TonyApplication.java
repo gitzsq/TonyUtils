@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.baidu.mapapi.CoordType;
 import com.baidu.mapapi.SDKInitializer;
+import com.tony.utils.utils.CrashHandler;
 import com.tony.utils.utils.LogUtil;
 import com.tony.utils.utils.pic.pictools.ImageItem;
 
@@ -33,7 +34,9 @@ public class TonyApplication extends Application {
         SDKInitializer.setCoordType(CoordType.BD09LL);
         mActivityLifecycleListener=ActivityLifecycleListener.getInstance();
         registerActivityLifecycleCallbacks(mActivityLifecycleListener);
-
+        //app异常捕捉
+        CrashHandler crashHandler = CrashHandler.getInstance();
+        crashHandler.init(getApplicationContext());
     }
 
     public static TonyApplication getApp(){

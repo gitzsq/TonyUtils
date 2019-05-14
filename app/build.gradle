@@ -15,13 +15,14 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        ndk{
+        ndk {
             moduleName "app"
             abiFilters "armeabi"
         }
-        sourceSets{
-            main{ jniLibs.srcDirs=['Libs']
-                }
+        sourceSets {
+            main {
+                jniLibs.srcDirs = ['Libs']
+            }
         }
     }
     packagingOptions {
