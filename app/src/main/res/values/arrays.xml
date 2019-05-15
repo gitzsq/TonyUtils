@@ -5,4 +5,12 @@
         <attr name="battaryPercnet" format="integer"/>
         <attr name="color"/>
     </declare-styleable>
+
+    <!--鱿鱼地区-->
+    <string-array name="spinner">
+        <item>北太平洋</item>
+        <item>东南太平洋</item>
+        <item>西南大西洋</item>
+        <item>其他</item>
+    </string-array>
 </resources>

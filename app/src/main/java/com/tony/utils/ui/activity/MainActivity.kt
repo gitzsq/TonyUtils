@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         map_btn.setOnClickListener(this)
         livedatabus_btn.setOnClickListener(this)
         spinner_btn.setOnClickListener(this)
+        amap_btn.setOnClickListener(this)
     }
 
     //按钮点击事件
@@ -84,6 +85,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 intent.setClass(this,SpinnerActivity::class.java)
                 startActivity(intent)
             }
+            R.id.amap_btn -> {//高德地图相关功能
+                val intent = Intent()
+                intent.setClass(this,AmapActivity::class.java)
+                startActivity(intent)
+            }
+
 
         }
     }

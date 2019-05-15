@@ -65,13 +65,6 @@
                 android:text="电池自定义view" />
 
             <Button
-                android:id="@+id/dialog_btn"
-                android:layout_width="260dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="20dp"
-                android:text="提示框" />
-
-            <Button
                 android:id="@+id/okhttp_btn"
                 android:layout_width="260dp"
                 android:layout_height="60dp"
@@ -84,7 +77,12 @@
                 android:layout_height="60dp"
                 android:layout_marginTop="20dp"
                 android:text="百度地图相关" />
-
+            <Button
+                android:id="@+id/amap_btn"
+                android:layout_width="260dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:text="高德地图相关" />
             <Button
                 android:id="@+id/livedatabus_btn"
                 android:layout_width="260dp"
@@ -98,7 +96,12 @@
                 android:layout_height="60dp"
                 android:layout_marginTop="20dp"
                 android:text="下拉控件Spinner" />
-
+            <Button
+                android:id="@+id/dialog_btn"
+                android:layout_width="260dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:text="提示框" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

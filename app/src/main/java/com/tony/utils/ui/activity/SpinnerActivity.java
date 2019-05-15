@@ -10,7 +10,11 @@ import com.tony.utils.ui.adapter.MyStringSpinnerAdapter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
+ /**
+  * 下拉控件Spinner
+  * @author: Tony
+  * @date: 2019/5/14 10:05
+  */
 public class SpinnerActivity extends BaseActivity {
 
     @BindView(R.id.spn_shiptype)
@@ -38,7 +42,7 @@ public class SpinnerActivity extends BaseActivity {
     }
 
     private void initSpinner() {
-        String[] typeStringArray = {"ceshi", "哈哈哈", "lalla"};
+        String[] typeStringArray =this.getResources().getStringArray(R.array.spinner);
         spntypeAdapter = new MyStringSpinnerAdapter(this, typeStringArray);
         spnShiptype.setAdapter(spntypeAdapter);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
