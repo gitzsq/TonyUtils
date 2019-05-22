@@ -5,7 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:background="#000000"
     tools:context=".ui.activity.BaiduMapActivity">
+   <ImageView
+       android:id="@+id/test_img"
+       android:layout_width="50dp"
+       android:layout_height="50dp" />
    <com.baidu.mapapi.map.MapView
        android:id="@+id/bmapview"
        android:layout_width="match_parent"

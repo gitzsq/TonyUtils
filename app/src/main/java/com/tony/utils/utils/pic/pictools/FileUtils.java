@@ -6,9 +6,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Environment;
 import android.util.Log;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
 
 public class FileUtils
 {
@@ -117,6 +122,19 @@ public class FileUtils
 			return false;
 		}
 		return true;
+	}
+	public interface GlideLoadBitmapCallback {
+		public void getBitmapCallback(Bitmap bitmap);
+	}
+
+	public static void getBitmap(Context context, String uri, final GlideLoadBitmapCallback callback) {
+		Glide.with(context).load(uri).asBitmap().into(new SimpleTarget<Bitmap>() {
+			@Override
+			public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+				callback.getBitmapCallback(resource);
+			}
+		});
+
 	}
 
 }

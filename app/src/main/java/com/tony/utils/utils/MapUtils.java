@@ -112,4 +112,42 @@ public class MapUtils {
     private static double rad(double d){
         return d * Math.PI / 180.0;
     }
+
+    public static double a = 6378245.0;
+    private  static  double x0 =-20037508.342787;
+    private  static  double y0 = 20037508.342787;
+    private  static  int tileSize= 256;
+    /**
+     * Web墨卡托投影行列号换算
+     * @param lon 经度
+     * @param lat 纬度
+     * @param level 切片等级
+     * @return
+     */
+    public static int[] getMercatorTileRowCol(double lon,double lat,int level){
+        double[] xy=getMercatorXY(lon,lat);
+        double x = xy[0];
+        double y = xy[1];
+
+        List<TileLod> lods = TileLod.getWebTileLods();
+        TileLod lod=lods.get(level);
+        int col = (int) Math.floor((x-x0)/(tileSize*lod.getResolution()));
+        int row = (int) Math.floor((y0 - y)/(tileSize*lod.getResolution()));
+        return new int[]{col,row};
+    }
+    /**
+     * 、经纬度坐标 => 投影坐标；google、高德、腾讯地图使用的是Web Mercator投影。
+     * @param lon
+     * @param lat
+     * @return
+     */
+    public static double[] getMercatorXY(double lon, double lat) {
+        double earthRad = a;
+        double x = lon * Math.PI / 180.0 * earthRad;
+        double a = lat * Math.PI / 180.0;
+        double y = earthRad / 2.0 * Math.log((1.0 + Math.sin(a)) / (1.0 - Math.sin(a)));
+        return new double[]{x, y};
+    }
+
+
 }

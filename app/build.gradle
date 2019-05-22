@@ -35,6 +35,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/assets/'] } }
 }
 
 dependencies {
@@ -59,4 +60,6 @@ dependencies {
     implementation files('libs/libammsdk.jar.jar')
     implementation files('libs/BaiduLBS_Android.jar')
     implementation files('libs/AMap_Location_V4.6.0_20190423.jar')
+    implementation 'org.litepal.android:core:1.6.1'
+
 }

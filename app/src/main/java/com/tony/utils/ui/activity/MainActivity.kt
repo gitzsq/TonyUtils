@@ -1,13 +1,10 @@
 package com.tony.utils.ui.activity
 
-import android.arch.lifecycle.Observer
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.annotation.Nullable
 import android.view.View
 import com.tony.utils.R
-import com.tony.utils.utils.LiveDataBus
 import com.tony.utils.utils.UIUtil
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -29,6 +26,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         livedatabus_btn.setOnClickListener(this)
         spinner_btn.setOnClickListener(this)
         amap_btn.setOnClickListener(this)
+        fragment_btn.setOnClickListener(this)
     }
 
     //按钮点击事件
