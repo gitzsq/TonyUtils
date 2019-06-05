@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.tony.utils.R
+import com.tony.utils.service.LogObserverService
 import com.tony.utils.utils.UIUtil
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         spinner_btn.setOnClickListener(this)
         amap_btn.setOnClickListener(this)
         fragment_btn.setOnClickListener(this)
+        rili_btn.setOnClickListener(this)
     }
 
     //按钮点击事件
@@ -88,7 +90,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 intent.setClass(this,AmapActivity::class.java)
                 startActivity(intent)
             }
-
+            R.id.rili_btn -> {//日志捕捉
+                val intent = Intent()
+                intent.setClass(this,LogObserverActicity::class.java)
+                startActivity(intent)
+            }
 
         }
     }

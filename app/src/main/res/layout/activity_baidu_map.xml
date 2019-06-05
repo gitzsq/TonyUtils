@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:background="#000000"
+    android:gravity="center"
     tools:context=".ui.activity.BaiduMapActivity">
-   <ImageView
-       android:id="@+id/test_img"
-       android:layout_width="50dp"
-       android:layout_height="50dp" />
-   <com.baidu.mapapi.map.MapView
-       android:id="@+id/bmapview"
-       android:layout_width="match_parent"
-       android:layout_height="300dp">
 
-   </com.baidu.mapapi.map.MapView>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/bmapview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </com.baidu.mapapi.map.MapView>
+
+        <Button
+            android:id="@+id/add_imgOverlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="添加图片图层"/>
+    </FrameLayout>
 </LinearLayout>

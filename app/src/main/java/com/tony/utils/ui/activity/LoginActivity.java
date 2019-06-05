@@ -1,11 +1,11 @@
 package com.tony.utils.ui.activity;
 
 import android.content.Context;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
+import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.polites.android.GestureImageView;
@@ -14,16 +14,15 @@ import com.tony.utils.app.AppConstants;
 import com.tony.utils.business.entity.LoginData;
 import com.tony.utils.business.iview.ILoginView;
 import com.tony.utils.business.presenter.LoginPresenter;
-import com.tony.utils.utils.GlideCircleTransform;
+import com.tony.utils.customview.GlideCircleTransform;
+import com.tony.utils.service.LogObserverService;
 import com.tony.utils.utils.ToastUtil;
 
-import java.util.concurrent.TimeUnit;
+import java.io.File;
+import java.io.FileOutputStream;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
-import rx.Observable;
-import rx.functions.Action1;
 
 
 /**
@@ -41,6 +40,11 @@ public class LoginActivity extends BaseActivity {
     GestureImageView imgView;
     private LoginPresenter mLoginPresenter = new LoginPresenter(this);
     private Context mContext;
+    private String TAG = "LogObserverActivity";
+    public static String LOG_ACTION = "com.example.admin.logobserver.LOG_ACTION";
+    private TextView logContent = null;
+    private Button start = null;
+    private Intent logObserverIntent = null;
 
     @Override
     protected int getLayoutId() {
@@ -52,6 +56,7 @@ public class LoginActivity extends BaseActivity {
         mContext = this;
         mLoginPresenter.onCreate();
         mLoginPresenter.attachView(mILoginView);
+
     }
 
     @Override
@@ -68,7 +73,11 @@ public class LoginActivity extends BaseActivity {
     public void click(View v) {
         switch (v.getId()) {
             case R.id.login_btn:
-                //网络请求
+                //启动Service处理任务
+//                startLogObserverService();
+//                UserInfo userInfo =new UserInfo("tony","男",1);
+//                userInfo.save();
+//                //网络请求
                 mLoginPresenter.login("mobile", "123456", "222.66.82.2", AppConstants.TOKEN);
                 break;
         }
@@ -97,4 +106,32 @@ public class LoginActivity extends BaseActivity {
         super.onDestroy();
         mLoginPresenter.onStop();
     }
+
+    private void startLogObserverService() {
+        logObserverIntent = new Intent(this, LogObserverService.class);
+        startService(logObserverIntent); }
+      //写数据
+     public void writeToSdCard(String string){
+            //1、判断sd卡是否可用
+         if(Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)){
+             //sd卡可用 //2、获取sd卡路径
+             File sdFile=Environment.getExternalStorageDirectory();
+             File path=new File(sdFile,"360/a.txt");
+             //sd卡下面的a.txt文件  参数 前面 是目录 后面是文件
+             try { FileOutputStream fileOutputStream=new FileOutputStream(path,true);
+                 fileOutputStream.write(string.getBytes());
+             } catch (Exception e) { e.printStackTrace();
+             }
+         }
+        }
+//        protected void onDestroy() {
+//            super.onDestroy();
+//            if (logObserverIntent!=null){
+//                stopService(logObserverIntent);
+//            }
+//            if (mLogBroadcastReceiver!=null){
+//                unregisterReceiver(mLogBroadcastReceiver);
+//            }
+//        }
+
 }

@@ -1,4 +1,4 @@
-package com.tony.utils.utils;
+package com.tony.utils.customview;
 
 import android.content.Context;
 import android.graphics.Bitmap;

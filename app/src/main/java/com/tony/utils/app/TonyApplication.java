@@ -2,13 +2,15 @@ package com.tony.utils.app;
 
 import android.app.Application;
 import android.content.Context;
-import android.util.Log;
+import android.support.multidex.MultiDex;
 
 import com.baidu.mapapi.CoordType;
 import com.baidu.mapapi.SDKInitializer;
 import com.tony.utils.utils.CrashHandler;
 import com.tony.utils.utils.LogUtil;
 import com.tony.utils.utils.pic.pictools.ImageItem;
+
+import org.litepal.LitePal;
 
 import java.util.List;
 
@@ -27,6 +29,8 @@ public class TonyApplication extends Application {
         LogUtil.log(LogUtil.LECEL_DEBUG,"Tony","TonyApplication onCreate()");
         appContext=getApplicationContext();
         app=this;
+//        MultiDex.install(this);
+        LitePal.initialize(this);
         // 在使用 SDK 各组间之前初始化 context 信息，传入 ApplicationContext
         SDKInitializer.initialize(appContext);
         //自4.3.0起，百度地图SDK所有接口均支持百度坐标和国测局坐标，用此方法设置您使用的坐标类型.
@@ -56,4 +60,5 @@ public class TonyApplication extends Application {
         super.onTerminate();
         unregisterActivityLifecycleCallbacks(mActivityLifecycleListener);
     }
+
 }

@@ -18,6 +18,8 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.BROADCAST_STICKY" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:name=".app.TonyApplication"
@@ -27,9 +29,13 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".ui.activity.AmapActivity"></activity>
+        <activity android:name=".ui.activity.LogObserverActicity"></activity>
+        <activity android:name=".ui.activity.AmapActivity" />
         <activity android:name=".ui.activity.SpinnerActivity" />
-        <service android:name="com.amap.api.location.APSService"></service>
+
+        <service android:name="com.amap.api.location.APSService" />
+        <service android:name=".service.LogObserverService" />
+
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="DnYTG8wu7yQGkt0xGg3HcAKwLnheEWf2" />

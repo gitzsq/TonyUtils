@@ -11,7 +11,7 @@ android {
     defaultConfig {
         applicationId "com.tony.utils"
         minSdkVersion 15
-        targetSdkVersion 26
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -24,6 +24,7 @@ android {
                 jniLibs.srcDirs = ['Libs']
             }
         }
+        multiDexEnabled true
     }
     packagingOptions {
 //解决More than one file was found with OS independent path 'META-INF/rxjava.properties'
@@ -61,5 +62,6 @@ dependencies {
     implementation files('libs/BaiduLBS_Android.jar')
     implementation files('libs/AMap_Location_V4.6.0_20190423.jar')
     implementation 'org.litepal.android:core:1.6.1'
-
+//    implementation 'com.haibin:calendarview:3.5.4'
+//    implementation 'com.android.support:multidex:1.0.3'
 }

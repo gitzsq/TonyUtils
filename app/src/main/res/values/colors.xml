@@ -6,4 +6,32 @@
 
     <color name="transparent">#00000000</color>
     <color name="Translucency">#e0000000</color>
+
+    <color name="white">#fff</color>
+    <color name="black">#000</color>
+    <color name="red">#FF0000</color>
+    <color name="commonblue">#3865b6</color><!--蓝色-->
+    <color name="card_shipinfo">#ff9205</color><!--渔船信息字体色-->
+    <color name="updateAPPFont">#c0d2e4</color><!--更新软件字体-->
+    <color name="updateAPPBg">#edf2f7</color><!--更新软件背景-->
+    <color name="card_shipcall">#2458ff</color><!--船舶呼号字体色-->
+    <color name="card_commit">#168ded</color><!--渔船信息表提交键颜色-->
+    <color name="card_grey">#B0B0B0</color><!--渔船信息表字体灰色-->
+    <color name="ylrz_bg">#f3f6f9</color><!--渔捞日志背景色-->
+    <color name="endgreen">#23d271</color>
+    <color name="lowblue">#cfdbf0</color><!--2019年1月渔捞日志-->
+    <color name="tunalist_bottomblue">#307cfa</color>
+    <color name="tunalist_bottomgrey">#5c5c5c</color>
+    <color name="sjxgreen">#64e33d</color><!--三角形绿色-->
+    <color name="sjxred">#f96846</color><!--三角形红色-->
+    <color name="sjxgrey">#bababa</color><!--三角形灰色-->
+    <color name="cpb_grey">#ffdedede</color>
+    <color name="colorSubmitted">#64E33D</color>
+    <color name="colorUnsubmitted">#F96846</color>
+    <color name="colorCalendarYear">#545454</color>
+    <color name="colorCalendarMonth">#8E8E8E</color>
+    <color name="colorCalendarMonthSelected">#FFF</color>
+    <color name="colorBgCalendarMonthSelected">#6AB7F9</color>
+    <color name="transparent_background">#50000000</color>
+
 </resources>

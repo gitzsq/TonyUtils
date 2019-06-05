@@ -108,6 +108,12 @@
                 android:layout_height="60dp"
                 android:layout_marginTop="20dp"
                 android:text="底部菜单栏切换模板" />
+            <Button
+                android:id="@+id/rili_btn"
+                android:layout_width="260dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:text="日历模板" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
