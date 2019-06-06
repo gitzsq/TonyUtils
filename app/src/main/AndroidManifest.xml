@@ -29,7 +29,6 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".ui.activity.LogObserverActicity"></activity>
         <activity android:name=".ui.activity.AmapActivity" />
         <activity android:name=".ui.activity.SpinnerActivity" />
 

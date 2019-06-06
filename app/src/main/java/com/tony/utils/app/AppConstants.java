@@ -15,5 +15,9 @@ public class AppConstants {
     //可选图片的最大值
     public static final int PIC_MAX_NUM =2;
 
-
+    public  interface evMsgType{
+        int getLatlon=1;//传输经纬度
+        int clickMap=2;//地图点击事件
+        int isRefreshHC=3;//是否刷新航次列表
+    }
 }

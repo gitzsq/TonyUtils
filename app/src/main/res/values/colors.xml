@@ -34,4 +34,12 @@
     <color name="colorBgCalendarMonthSelected">#6AB7F9</color>
     <color name="transparent_background">#50000000</color>
 
+
+    <!--渔捞日志部分颜色-->
+    <color name="ylrzblue">#1b52b3</color>
+    <color name="ylrzorange">#fe850f</color>
+    <color name="ylrzstart">#ffba26</color>
+    <color name="ylrzend">#ff8c26</color>
+    <color name="ylrzdate">#23d271</color>
+    <color name="dafugui">#9c9c9c</color>
 </resources>

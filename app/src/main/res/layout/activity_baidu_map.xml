@@ -1,27 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
-    android:gravity="center"
-    tools:context=".ui.activity.BaiduMapActivity">
-
-    <FrameLayout
+    android:orientation="vertical">
+    <!--标题栏-->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/commonblue"
+        android:orientation="horizontal">
+        <!--返回键-->
+        <RelativeLayout
+            android:id="@+id/rl_changeShipInfo"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:background="@mipmap/changeshipinfo" />
+        </RelativeLayout>
+        <!--标题-->
+        <TextView
+            android:id="@+id/tv_calenderandlist_title"
+            android:layout_width="290dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="0.96"
+            android:gravity="center"
+            android:text="海洋环境"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+        <!--啥也没有，占位-->
+        <RelativeLayout
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp" />
+        </RelativeLayout>
+    </LinearLayout>
+    <!--海洋环境-->
+    <FrameLayout
+        android:id="@+id/ll_oceanEnviromentPage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <com.baidu.mapapi.map.MapView
             android:id="@+id/bmapview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"></com.baidu.mapapi.map.MapView>
 
-        </com.baidu.mapapi.map.MapView>
-
-        <Button
-            android:id="@+id/add_imgOverlay"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="添加图片图层"/>
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/add_yaosu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="添加基本要素" />
+
+            <Button
+                android:id="@+id/update_zoom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="改变级别" />
+
+            <Button
+                android:id="@+id/update_yaosutype"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="改变要素类型" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#5B5B5B"
+                android:layout_marginLeft="6dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="范围："/>
+                <EditText
+                    android:id="@+id/range_et"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:text="10"
+                    android:hint="请输入范围"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/clear_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="清除" />
+
+        </LinearLayout>
+
     </FrameLayout>
+
 </LinearLayout>
