@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +14,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.BitmapDescriptorFactory;
 import com.baidu.mapapi.map.GroundOverlayOptions;
@@ -22,12 +25,11 @@ import com.baidu.mapapi.map.MapView;
 import com.baidu.mapapi.map.Marker;
 import com.baidu.mapapi.map.MarkerOptions;
 import com.baidu.mapapi.model.LatLng;
-import com.google.gson.reflect.TypeToken;
 import com.tony.utils.R;
 import com.tony.utils.app.AppConstants;
 import com.tony.utils.business.entity.EventMsg;
-import com.tony.utils.business.entity.PointExtract;
-import com.tony.utils.business.entity.Result;
+import com.tony.utils.customview.CustomSurfaceView;
+import com.tony.utils.customview.DragView;
 import com.tony.utils.utils.BdMapUtil;
 import com.tony.utils.utils.CoordinateUtil;
 import com.tony.utils.utils.ImgUtil;
@@ -36,13 +38,13 @@ import com.tony.utils.utils.UIUtil;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
-import java.lang.reflect.Type;
-import java.util.List;
+
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 
-public class BaiduMapActivity extends BaseActivity implements ImgUtil.GlideLoadBitmapCallback{
+public class BaiduMapActivity extends BaseActivity implements ImgUtil.GlideLoadBitmapCallback {
 
     @BindView(R.id.bmapview)
     MapView bmapview;
@@ -66,7 +68,7 @@ public class BaiduMapActivity extends BaseActivity implements ImgUtil.GlideLoadB
     private double lon_click = 0.0;
     double range = 20.1;
     private String imgUrl = "http://47.100.49.112:8088/fishser/onboard/map/marineElements";
-    private String queryPointExtractInfoUrl ="http://47.100.49.112:8088/fishser/map/point_extract";
+    private String queryPointExtractInfoUrl = "http://47.100.49.112:8088/fishser/map/point_extract";
     private int zoom = 3;
     private String[] zoomList = {"1", "2", "3", "4", "5", "6", "7", "8"};
     private String[] ysShowNameList = {"气压", "风场", "海浪", "表面洋流", "表温"};
@@ -87,6 +89,7 @@ public class BaiduMapActivity extends BaseActivity implements ImgUtil.GlideLoadB
     double xma = 0.0;
     private View pointExtractDialogView;
     private AlertDialog extractPointDialog;
+    private DragView mDragView;
 
     @Override
     protected int getLayoutId() {
@@ -102,6 +105,9 @@ public class BaiduMapActivity extends BaseActivity implements ImgUtil.GlideLoadB
         mBaiduMap.setMapType(BaiduMap.MAP_TYPE_NORMAL);
         updateMap(33.076157, 125.673057, 8.0f);
         mBaiduMap.setOnMapClickListener(BdMapUtil.listener);//地图添加点击事件
+        mDragView = (DragView)findViewById(R.id.dragview);
+        mDragView.addDragView(R.layout.my_self_view, 0,400,380,760, false,false);
+
     }
 
     @Override
@@ -228,8 +234,8 @@ public class BaiduMapActivity extends BaseActivity implements ImgUtil.GlideLoadB
         extractPointDialog.show();
         //在show()之后，重新设置宽度
         extractPointDialog.getWindow().setLayout(800, LinearLayout.LayoutParams.WRAP_CONTENT);
-        String queryUrl=queryPointExtractInfoUrl+"?lon="+lon_click+"&lat="+lat_click+"&datatype=prmsl,wave,sst,ssh,chla,water_temp,wind10,sf,ssta,ssha,water_uv";
-        Log.d("Tony","单点提取url："+queryUrl);
+        String queryUrl = queryPointExtractInfoUrl + "?lon=" + lon_click + "&lat=" + lat_click + "&datatype=prmsl,wave,sst,ssh,chla,water_temp,wind10,sf,ssta,ssha,water_uv";
+        Log.d("Tony", "单点提取url：" + queryUrl);
     }
 
     //获取图片回调
@@ -324,5 +330,12 @@ public class BaiduMapActivity extends BaseActivity implements ImgUtil.GlideLoadB
             xmax = xmin;
             xmin = b;
         }
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
     }
 }
