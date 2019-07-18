@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         spinner_btn.setOnClickListener(this)
         amap_btn.setOnClickListener(this)
         fragment_btn.setOnClickListener(this)
+        arcgismap_btn.setOnClickListener(this)
     }
 
     //按钮点击事件
@@ -62,7 +63,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 object : Thread() {
                     override fun run() {
                         super.run()
-                        Thread.sleep(3000)//休眠3秒
+                        Thread.sleep(2000)//休眠3秒
                         UIUtil.cancelProgressDialog()
                     }
                 }.start()
@@ -70,6 +71,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.map_btn -> {//百度地图相关
                 val intent = Intent()
                 intent.setClass(this,BaiduMapActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.arcgismap_btn -> {//Arcgis地图相关
+                val intent = Intent()
+                intent.setClass(this,ArcGisActivity::class.java)
                 startActivity(intent)
             }
             R.id.livedatabus_btn -> {//livedatabus测试
@@ -84,7 +90,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.amap_btn -> {//高德地图相关功能
                 val intent = Intent()
-                intent.setClass(this,AmapActivity::class.java)
+                intent.setClass(this,ChartsActivity::class.java)
                 startActivity(intent)
             }
 

@@ -1,7 +1,11 @@
 package com.tony.utils.ui.activity;
 
 
+import android.arch.lifecycle.LifecycleOwner;
 import android.arch.lifecycle.Observer;
+import android.content.ComponentName;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.Button;
@@ -13,7 +17,7 @@ import com.tony.utils.utils.LiveDataBus;
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class LiveDataBusActivity extends BaseActivity {
+public class LiveDataBusActivity extends BaseActivity implements LifecycleOwner {
 
 
     @BindView(R.id.send_btn)
@@ -51,9 +55,23 @@ public class LiveDataBusActivity extends BaseActivity {
     public void click(View v) {
         switch (v.getId()) {
             case R.id.send_btn:
+                goMain();
               //发送消息
-                LiveDataBus.get().with("key_test").setValue("这是一条测试消息");
+//                LiveDataBus.get().with("key_test").setValue("这是一条测试消息");
+
                 break;
         }
     }
+
+
+    public void goMain(){
+        ComponentName componentName = new ComponentName("com.diting.police","com.lbs.lbspos.MainMap");
+        Intent intent = new Intent();
+        Bundle bundle = new Bundle();
+        bundle.putString("phonenumber", "15769225572");
+        intent.putExtras(bundle);
+        intent.setComponent(componentName);
+        startActivity(intent);
+    }
+
 }

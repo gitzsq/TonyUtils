@@ -6,6 +6,9 @@ buildscript {
         maven{ url "http://maven.aliyun.com/nexus/content/groups/public" }
         google()
         jcenter()
+        maven {
+            url'http://dl.bintray.com/esri/arcgis'
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.4'
@@ -22,6 +25,18 @@ allprojects {
         maven{ url "http://maven.aliyun.com/nexus/content/groups/public" }
         google()
         jcenter()
+        maven {
+            url'http://dl.bintray.com/esri/arcgis'
+        }
+    }
+}
+subprojects{
+    afterEvaluate{project->
+        if(project.hasProperty("dependencies")){
+            dependencies{
+                implementation'com.esri.arcgis.android:arcgis-android:10.2.7'
+            }
+        }
     }
 }
 

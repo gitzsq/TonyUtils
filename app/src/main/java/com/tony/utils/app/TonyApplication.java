@@ -39,8 +39,8 @@ public class TonyApplication extends Application {
         mActivityLifecycleListener=ActivityLifecycleListener.getInstance();
         registerActivityLifecycleCallbacks(mActivityLifecycleListener);
         //app异常捕捉
-        CrashHandler crashHandler = CrashHandler.getInstance();
-        crashHandler.init(getApplicationContext());
+//        CrashHandler crashHandler = CrashHandler.getInstance();
+//        crashHandler.init(getApplicationContext());
     }
 
     public static TonyApplication getApp(){

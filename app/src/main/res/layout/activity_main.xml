@@ -64,7 +64,12 @@
                 android:layout_marginTop="20dp"
                 android:text="电池自定义view" />
 
-
+            <Button
+                android:id="@+id/arcgismap_btn"
+                android:layout_width="260dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:text="ArcGis地图相关" />
             <Button
                 android:id="@+id/map_btn"
                 android:layout_width="260dp"
