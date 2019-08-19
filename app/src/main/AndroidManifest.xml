@@ -56,6 +56,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activity.LoginActivity" />
+        <activity android:name=".bdtest.BMapActivity" />
         <activity android:name=".ui.activity.RxActivity" />
         <activity android:name=".ui.activity.PicActivity" />
         <activity android:name=".utils.pic.picviews.PhotoActivity" />

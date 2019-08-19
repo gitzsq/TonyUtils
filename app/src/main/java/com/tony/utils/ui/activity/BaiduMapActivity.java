@@ -105,8 +105,8 @@ public class BaiduMapActivity extends BaseActivity implements ImgUtil.GlideLoadB
         mBaiduMap.setMapType(BaiduMap.MAP_TYPE_NORMAL);
         updateMap(33.076157, 125.673057, 8.0f);
         mBaiduMap.setOnMapClickListener(BdMapUtil.listener);//地图添加点击事件
-        mDragView = (DragView)findViewById(R.id.dragview);
-        mDragView.addDragView(R.layout.my_self_view, 0,400,380,760, false,false);
+//        mDragView = (DragView)findViewById(R.id.dragview);
+//        mDragView.addDragView(R.layout.my_self_view, 0,400,380,760, false,false);
 
     }
 

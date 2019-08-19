@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.tony.utils.R
+import com.tony.utils.bdtest.BMapActivity
 import com.tony.utils.utils.UIUtil
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -70,7 +71,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.map_btn -> {//百度地图相关
                 val intent = Intent()
-                intent.setClass(this,BaiduMapActivity::class.java)
+                intent.setClass(this, BMapActivity::class.java)
                 startActivity(intent)
             }
             R.id.arcgismap_btn -> {//Arcgis地图相关
